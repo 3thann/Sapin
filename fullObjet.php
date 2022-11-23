@@ -86,10 +86,10 @@ class Triangle {
         $this->oneLine($this->base_stars);
         if($this->first == true) {
             $this->oneLine($this->base_stars += 2);
-            $this->oneLine($this->base_stars += 6);
+            $this->oneLine($this->base_stars += 4);
         } else {
             $this->oneLine($this->base_stars += 4);
-            $this->oneLine($this->base_stars += 8);
+            $this->oneLine($this->base_stars += 4);
         }
     } 
 }
