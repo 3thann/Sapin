@@ -15,6 +15,7 @@ class Tree {
     public function __construct($nb_stages)
     {
         $this->config["nb_stages"] = $nb_stages;
+        $this->tree();
     }
 
     private function oneLine($stars) {
@@ -60,6 +61,9 @@ class Tree {
 
     public function tree() {
         $y = 0;
+        if( $this->config["test"] == true) {
+            echo('<pre style="padding-left: 200px;">');
+        }
         $this->triangle(1, true);
         for($i=1; $i <= $this->config["nb_stages"] - 1; $i++) {
             if($i == 1) {
@@ -71,6 +75,9 @@ class Tree {
             $this->triangle($y);
         }
         $this->trunk();
+        if( $this->config["test"] == true) {
+            echo("</pre>");
+        }
     }
 
     private function trunk() {
@@ -80,14 +87,4 @@ class Tree {
     }
 }
 
-$tree1 = new Tree(7);
-
-if( $tree1->config["test"] == true) {
-    echo('<pre style="padding-left: 200px;">');
-}
-
-$tree1->tree();
-
-if( $tree1->config["test"] == true) {
-    echo("</pre>");
-}
+new Tree(7);
